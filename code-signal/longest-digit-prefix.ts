@@ -1,4 +1,4 @@
-function longestDigitPrefix(inputString: string): string {
+export default function longestDigitPrefix(inputString: string): string {
   let outputString: string = ''
   for (let i = 0; i < inputString.length; i++) {
     if (Number.isInteger(Number(inputString[i])) && inputString[i] !== ' ') {
