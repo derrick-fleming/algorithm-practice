@@ -1,6 +1,6 @@
 import longestDigitPrefix from "./longest-digit-prefix";
 import bishopAndPawn from "./bishop-and-pawn";
-
+import isDigit from "./isDigit";
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -29,5 +29,22 @@ describe("bishopAndPawn", () => {
 
     const value2 = bishopAndPawn(p1, p2);
     expect(value2).toEqual(false);
+  });
+});
+
+describe("isDigit", () => {
+  it("should return the correct values for isDigit function", () => {
+    let test = "-";
+
+    const value = isDigit(test);
+    expect(value).toEqual(false);
+
+    test ="5"
+    const value2 = isDigit(test);
+    expect(value2).toEqual(true);
+
+    test = "0"
+    const value3 = isDigit(test);
+    expect(value3).toEqual(true);
   });
 });
