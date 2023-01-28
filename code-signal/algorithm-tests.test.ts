@@ -1,6 +1,7 @@
 import longestDigitPrefix from "./longest-digit-prefix";
 import bishopAndPawn from "./bishop-and-pawn";
 import isDigit from "./isDigit";
+import lineEncoding from "./line-encoding";
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -46,5 +47,22 @@ describe("isDigit", () => {
     test = "0"
     const value3 = isDigit(test);
     expect(value3).toEqual(true);
+  });
+});
+
+describe("lineEncoding", () => {
+  it("should return the correct values for lineEncoding function", () => {
+    let test = "abbcabb";
+
+    const value = lineEncoding(test);
+    expect(value).toEqual("a2bca2b");
+
+    test = "zzzz"
+    const value2 = lineEncoding(test);
+    expect(value2).toEqual("4z");
+
+    test = "ssiiggkooo"
+    const value3 = lineEncoding(test);
+    expect(value3).toEqual("2s2i2gk3o");
   });
 });
