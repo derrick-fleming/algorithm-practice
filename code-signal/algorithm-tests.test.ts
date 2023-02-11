@@ -3,6 +3,7 @@ import bishopAndPawn from "./bishop-and-pawn";
 import isDigit from "./isDigit";
 import lineEncoding from "./line-encoding";
 import chessKnight from './chess-knight';
+import deleteDigit from './delete-digit';
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -73,5 +74,13 @@ describe("chessKnight", () => {
     expect(chessKnight('a1')).toEqual(2);
     expect(chessKnight('d4')).toEqual(8);
     expect(chessKnight('f7')).toEqual(6);
+  })
+})
+
+describe("deleteDigit", () => {
+  it ("should return the correct values for deleteDigit function", () => {
+    expect(deleteDigit(2345109)).toEqual(345109);
+    expect(deleteDigit(861452)).toEqual(86452);
+    expect(deleteDigit(109)).toEqual(19);
   })
 })
