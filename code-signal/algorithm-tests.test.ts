@@ -4,6 +4,7 @@ import isDigit from "./isDigit";
 import lineEncoding from "./line-encoding";
 import chessKnight from './chess-knight';
 import deleteDigit from './delete-digit';
+import buildPalindrome from './build-palindrome';
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -82,5 +83,13 @@ describe("deleteDigit", () => {
     expect(deleteDigit(2345109)).toEqual(345109);
     expect(deleteDigit(861452)).toEqual(86452);
     expect(deleteDigit(109)).toEqual(19);
+  })
+})
+
+describe("buildPalindrome", () => {
+  it ("should return the expected values for buildPalindrome function", () => {
+    expect(buildPalindrome('aaaaba')).toEqual('aaaabaaaa');
+    expect(buildPalindrome('cbdbedffcg')).toEqual('cbdbedffcgcffdebdbc');
+    expect(buildPalindrome('abba')).toEqual('abba');
   })
 })
