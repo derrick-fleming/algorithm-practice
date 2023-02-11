@@ -2,6 +2,7 @@ import longestDigitPrefix from "./longest-digit-prefix";
 import bishopAndPawn from "./bishop-and-pawn";
 import isDigit from "./isDigit";
 import lineEncoding from "./line-encoding";
+import chessKnight from './chess-knight';
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -66,3 +67,11 @@ describe("lineEncoding", () => {
     expect(value3).toEqual("2s2i2gk3o");
   });
 });
+
+describe("chessKnight", () => {
+  it("should return the correct values for chessKnight function", () => {
+    expect(chessKnight('a1')).toEqual(2);
+    expect(chessKnight('d4')).toEqual(8);
+    expect(chessKnight('f7')).toEqual(6);
+  })
+})
