@@ -5,6 +5,7 @@ import lineEncoding from "./line-encoding";
 import chessKnight from './chess-knight';
 import deleteDigit from './delete-digit';
 import buildPalindrome from './build-palindrome';
+import electionWinners from './election-winners';
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -91,5 +92,16 @@ describe("buildPalindrome", () => {
     expect(buildPalindrome('aaaaba')).toEqual('aaaabaaaa');
     expect(buildPalindrome('cbdbedffcg')).toEqual('cbdbedffcgcffdebdbc');
     expect(buildPalindrome('abba')).toEqual('abba');
+  })
+})
+
+describe("electionWinners", () => {
+  it ("should return the expected values for electionWinners", () => {
+    let candidates = [3, 1, 1, 3, 1];
+    expect(electionWinners(candidates, 2)).toEqual(2);
+    candidates = [5, 1, 3, 4, 1];
+    expect(electionWinners(candidates, 0)).toEqual(1);
+    candidates = [100, 98, 123, 138, 89, 105]
+    expect(electionWinners(candidates, 34)).toEqual(3);
   })
 })
