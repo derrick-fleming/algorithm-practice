@@ -10,6 +10,7 @@ import isMac48Address from './mac48-address';
 import longestWord from './longest-word';
 import validTime from './valid-time';
 import sumUpNumbers from "./sum-up-numbers";
+import differentSquares from './different-squares';
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -145,5 +146,28 @@ describe("sumUpNumbers", () => {
     expect(sumUpNumbers("2 apples, 12 oranges")).toEqual(14);
     expect(sumUpNumbers("no digits at all")).toEqual(0);
     expect(sumUpNumbers("42+781")).toEqual(823)
+  })
+})
+
+describe("differentSquares", () => {
+  it("should return the expected value for differentSquares", () => {
+    let matrix =
+    [[1, 2, 1],
+     [2, 2, 2],
+     [2, 2, 2],
+     [1, 2, 3],
+     [2, 2, 1]];
+    expect(differentSquares(matrix)).toEqual(6);
+    matrix =
+     [[2, 5, 3, 4, 3, 1, 3, 2],
+      [4, 5, 4, 1, 2, 4, 1, 3],
+      [1, 1, 2, 1, 4, 1, 1, 5],
+      [1, 3, 4, 2, 3, 4, 2, 4],
+      [1, 5, 5, 2, 1, 3, 1, 1],
+      [1, 2, 3, 3, 5, 1, 2, 4],
+      [3, 1, 4, 4, 4, 1, 5, 5],
+      [5, 1, 3, 3, 1, 5, 3, 5],
+      [5, 4, 4, 3, 5, 4, 4, 4]];
+    expect(differentSquares(matrix)).toEqual(54);
   })
 })
