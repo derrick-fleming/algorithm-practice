@@ -9,6 +9,7 @@ import electionWinners from './election-winners';
 import isMac48Address from './mac48-address';
 import longestWord from './longest-word';
 import validTime from './valid-time';
+import sumUpNumbers from "./sum-up-numbers";
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -136,5 +137,13 @@ describe("validTime", () => {
     expect(validTime("12:34")).toEqual(true);
     expect(validTime("24:00")).toEqual(false);
     expect(validTime("00:59")).toEqual(true);
+  })
+})
+
+describe("sumUpNumbers", () => {
+  it("should return the expected value for sumUpNumbers", () => {
+    expect(sumUpNumbers("2 apples, 12 oranges")).toEqual(14);
+    expect(sumUpNumbers("no digits at all")).toEqual(0);
+    expect(sumUpNumbers("42+781")).toEqual(823)
   })
 })
