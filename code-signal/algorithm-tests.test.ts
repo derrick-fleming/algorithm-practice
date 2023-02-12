@@ -6,6 +6,7 @@ import chessKnight from './chess-knight';
 import deleteDigit from './delete-digit';
 import buildPalindrome from './build-palindrome';
 import electionWinners from './election-winners';
+import isMac48Address from './mac48-address';
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -103,5 +104,16 @@ describe("electionWinners", () => {
     expect(electionWinners(candidates, 0)).toEqual(1);
     candidates = [100, 98, 123, 138, 89, 105]
     expect(electionWinners(candidates, 34)).toEqual(3);
+  })
+})
+
+describe("isMac48Address", () => {
+  it("should return expected values for isMac48Address", () => {
+    let address = "00-1B-63-84-45-E6";
+    expect(isMac48Address(address)).toEqual(true);
+    address = "Z1-1B-63-84-45-E6";
+    expect(isMac48Address(address)).toEqual(false);
+    address = "D0-1B-64-89-43-DEA";
+    expect(isMac48Address(address)).toEqual(false);
   })
 })
