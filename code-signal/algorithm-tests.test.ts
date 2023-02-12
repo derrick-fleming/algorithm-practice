@@ -7,6 +7,7 @@ import deleteDigit from './delete-digit';
 import buildPalindrome from './build-palindrome';
 import electionWinners from './election-winners';
 import isMac48Address from './mac48-address';
+import longestWord from './longest-word';
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -115,5 +116,16 @@ describe("isMac48Address", () => {
     expect(isMac48Address(address)).toEqual(false);
     address = "D0-1B-64-89-43-DEA";
     expect(isMac48Address(address)).toEqual(false);
+  })
+})
+
+describe("longestWord", () => {
+  it("should return the longestWord in a sentence", () => {
+    let sentence = "Ready[[[, steady, go!";
+    expect(longestWord(sentence)).toEqual('steady');
+    sentence = "To be or not to be";
+    expect(longestWord(sentence)).toEqual('not');
+    sentence = "345 Hello, welcome to the new dec@de"
+    expect(longestWord(sentence)).toEqual('welcome')
   })
 })
