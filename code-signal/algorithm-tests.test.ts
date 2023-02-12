@@ -8,6 +8,7 @@ import buildPalindrome from './build-palindrome';
 import electionWinners from './election-winners';
 import isMac48Address from './mac48-address';
 import longestWord from './longest-word';
+import validTime from './valid-time';
 
 describe("longestDigitPrefix", () => {
   it("should return the correct values for the test", async ()=> {
@@ -127,5 +128,13 @@ describe("longestWord", () => {
     expect(longestWord(sentence)).toEqual('not');
     sentence = "345 Hello, welcome to the new dec@de"
     expect(longestWord(sentence)).toEqual('welcome')
+  })
+})
+
+describe("validTime", () => {
+  it("should return expected value for validTime", () => {
+    expect(validTime("12:34")).toEqual(true);
+    expect(validTime("24:00")).toEqual(false);
+    expect(validTime("00:59")).toEqual(true);
   })
 })
