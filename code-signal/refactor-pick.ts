@@ -1,4 +1,4 @@
-function pick(source, keys) {
+function pick(source: {}, keys: string[]) {
   const pickObject = {};
   for (const key in source) {
     if (keys.includes(key) && source[key] !== undefined) {

@@ -1,4 +1,4 @@
-function depositProfit(deposit, rate, threshold) {
+function depositProfit(deposit: number, rate: number, threshold: number) {
   let year = 1;
   const percent = rate / 100;
   let growthAmount = deposit + (deposit * percent);

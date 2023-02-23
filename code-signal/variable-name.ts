@@ -1,4 +1,4 @@
-function variableName(name) {
+function variableName(name: string) {
   if (/\D/g.test(name[0]) === false) {
     return false;
   }

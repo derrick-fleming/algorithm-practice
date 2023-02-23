@@ -1,7 +1,7 @@
-function evenDigitsOnly(n) {
+function evenDigitsOnly(n: number) {
   const stringNumber = n.toString();
   const arrayNumber = stringNumber.split('');
-  const odd = arrayNumber.filter(number => number % 2 !== 0);
+  const odd = arrayNumber.filter(number => Number(number) % 2 !== 0);
   if (odd.length > 0) {
     return false;
   } else {

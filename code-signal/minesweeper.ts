@@ -1,4 +1,4 @@
-function minesweeper(matrix) {
+function minesweeper(matrix: Number[][]) {
   const matrixXCoordinateMax = matrix[0].length - 1;
   const matrixYCoordinateMax = matrix.length - 1;
 
@@ -6,7 +6,6 @@ function minesweeper(matrix) {
   for (let i = 0; i <= matrixYCoordinateMax; i++) {
     minesArray.push([]);
   }
-  // loop through the matrix to find if it's neighboring elements are true.
   for (let yCoordinate = 0; yCoordinate <= matrixYCoordinateMax; yCoordinate++) {
     for (let xCoordinate = 0; xCoordinate <= matrixXCoordinateMax; xCoordinate++) {
       let mines = 0;
