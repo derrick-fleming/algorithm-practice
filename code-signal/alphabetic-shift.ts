@@ -1,4 +1,4 @@
-function alphabeticShift(inputString) {
+function alphabeticShift(inputString: string): string {
   const inputArray = inputString.split('');
   const updatedUniCode = inputArray.map(letter => {
     let code = letter.charCodeAt(0) + 1;

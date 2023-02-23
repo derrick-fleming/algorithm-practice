@@ -1,4 +1,4 @@
-function arrayReplace(inputArray, elemToReplace, substitutionElem) {
+function arrayReplace(inputArray: Number[], elemToReplace: number, substitutionElem: number) {
   const output = inputArray.map((element, index) => {
     if (elemToReplace === element) {
       inputArray[index] = substitutionElem;
@@ -7,5 +7,3 @@ function arrayReplace(inputArray, elemToReplace, substitutionElem) {
   });
   return output;
 }
-
-arrayReplace([1, 2, 1]);
