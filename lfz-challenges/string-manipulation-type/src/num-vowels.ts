@@ -1,3 +1,6 @@
 export default function numNowels(string: string) {
-  return 0;
+  const splitString = string.toLowerCase().split('');
+  const regEx = /[aeiou]/;
+  const filter = splitString.filter(letter => regEx.test(letter));
+  return filter.length;
 }
