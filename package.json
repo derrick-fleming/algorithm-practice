@@ -5,9 +5,13 @@
   "description": "Code exercise solutions.",
   "scripts": {
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "test-mocha": "mocha -r ts-node/register 'lfz-challenges/**/**/*.ts'"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
     "eslint": "^8.25.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-html": "^7.1.0",
@@ -17,10 +21,14 @@
     "jest": "^29.4.1",
     "lint-staged": "^13.0.3",
     "markuplint": "^2.10.2",
+    "mocha": "^10.2.0",
     "react": "^18.2.0",
     "stylelint": "^14.14.0",
     "stylelint-config-recommended": "^9.0.0",
     "stylelint-config-standard": "^27.0.0",
     "ts-jest": "^29.0.5"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
   }
 }
