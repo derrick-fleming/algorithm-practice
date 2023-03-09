@@ -1,8 +1,10 @@
-export default function containsDuplicate(nums: readonly number[]): boolean {
+export default function containsDuplicate(nums: number[]): boolean {
+  let otherArray = [];
   for (let i = 0; i < nums.length; i++) {
-    if (nums.slice(i + 1).includes(nums[i])) {
+    if (otherArray.includes(nums[i])) {
       return true;
     }
+    otherArray.push(nums[i])
   }
   return false;
 };
