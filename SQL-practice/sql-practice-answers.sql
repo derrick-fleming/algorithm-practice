@@ -104,12 +104,14 @@ order by city
 
 /* MEDIUM QUESTIONS
 
-Question 1 - Show unique birth years from patients and order them by ascending. */
+Question 1 -
+Show unique birth years from patients and order them by ascending. */
 select Distinct Year(birth_date) as birth_year
 from patients
 order by birth_year
 
-/* Question 2 - Show unique first names from the patients table which only occurs once in the list.
+/* Question 2 -
+Show unique first names from the patients table which only occurs once in the list.
 For example, if two or more people are named 'John' in the first_name column then don't include their name in the output list.
 If only 1 person is named 'Leo' then include them in the output. */
 select first_name
@@ -117,13 +119,16 @@ from patients
 group by first_name
 Having count(patient_id) = 1
 
-/* Question 3 - Show patient_id and first_name from patients where their first_name start and ends with 's' and is at least 6 characters long.*/
+/* Question 3 -
+Show patient_id and first_name from patients where their first_name start and ends with 's' and is at least 6 characters long.*/
 select patient_id,
        first_name
 from patients
 where first_name like 's____%s'
 
-/* Question 4 - Show patient_id, first_name, last_name from patients whos diagnosis is 'Dementia'. Primary diagnosis is stored in the admissions table. */
+/* Question 4 -
+Show patient_id, first_name, last_name from patients whos diagnosis is 'Dementia'.
+Primary diagnosis is stored in the admissions table. */
 select patient_id,
        first_name,
        last_name
@@ -131,9 +136,63 @@ from patients
 join admissions using (patient_id)
 where diagnosis = 'Dementia'
 
-/* Question 5 - Display every patient's first_name. Order the list by the length of each name and then by alphbetically */
+/* Question 5 -
+Display every patient's first_name.
+Order the list by the length of each name and then by alphbetically */
 select first_name
 from patients
 order by
 	Len(first_name),
 	first_name
+
+/* Question 6 -
+Show the total amount of male patients and the total amount of female patients in the patients table.
+Display the two results in the same row. */
+select
+	SUM(gender = 'M') as male,
+  SUM(gender = 'F') as female
+from patients
+
+/* Question 7 -
+Show first and last name, allergies from patients which have allergies to either 'Penicillin' or 'Morphine'.
+Show results ordered ascending by allergies then by first_name then by last_name. */
+select
+	first_name,
+    last_name,
+    allergies
+from patients
+where allergies = 'Penicillin' or allergies = 'Morphine'
+order by
+	allergies asc,
+    first_name,
+    last_name
+
+/* Question 8 -
+Show patient_id, diagnosis from admissions. Find patients admitted multiple times for the same diagnosis. */
+select
+	patient_id,
+    diagnosis
+from admissions
+group by
+  patient_id,
+  diagnosis
+having count(*) > 1
+
+/* Question 9 -
+Show the city and the total number of patients in the city.
+Order from most to least patients and then by city name ascending. */
+select
+	city,
+    count(*) as total_patients
+from patients
+group by city
+order by
+	total_patients desc,
+    city asc
+
+/* Question 10 -
+Show first name, last name and role of every person that is either patient or doctor.
+The roles are either "Patient" or "Doctor" */
+SELECT first_name, last_name, 'Patient' AS role FROM patients
+	UNION ALL
+SELECT first_name, last_name, 'Doctor' AS role FROM doctors
