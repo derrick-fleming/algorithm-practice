@@ -101,3 +101,39 @@ where
    or city Like 'o%'
    or city Like 'u%'
 order by city
+
+/* MEDIUM QUESTIONS
+
+Question 1 - Show unique birth years from patients and order them by ascending. */
+select Distinct Year(birth_date) as birth_year
+from patients
+order by birth_year
+
+/* Question 2 - Show unique first names from the patients table which only occurs once in the list.
+For example, if two or more people are named 'John' in the first_name column then don't include their name in the output list.
+If only 1 person is named 'Leo' then include them in the output. */
+select first_name
+from patients
+group by first_name
+Having count(patient_id) = 1
+
+/* Question 3 - Show patient_id and first_name from patients where their first_name start and ends with 's' and is at least 6 characters long.*/
+select patient_id,
+       first_name
+from patients
+where first_name like 's____%s'
+
+/* Question 4 - Show patient_id, first_name, last_name from patients whos diagnosis is 'Dementia'. Primary diagnosis is stored in the admissions table. */
+select patient_id,
+       first_name,
+       last_name
+from patients
+join admissions using (patient_id)
+where diagnosis = 'Dementia'
+
+/* Question 5 - Display every patient's first_name. Order the list by the length of each name and then by alphbetically */
+select first_name
+from patients
+order by
+	Len(first_name),
+	first_name
