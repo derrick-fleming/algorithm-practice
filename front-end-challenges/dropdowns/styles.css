@@ -27,12 +27,14 @@ button:hover {
 }
 
 ul {
+  position: absolute;
   background-color: #e5e5e5;
   margin: 0;
   border-radius: 8px;
   width: fit-content;
   list-style-type: none;
   padding: 0;
+  box-shadow: 2px 2px 2px #c5c5c5;
 }
 
 li {
