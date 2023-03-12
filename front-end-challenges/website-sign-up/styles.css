@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+#payment-container {
+  display: flex;
+}
+
+#sign-up {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.required {
+  color: red;
+  margin-top: 0;
+}
+
+.hidden {
+  display: none;
+}

@@ -8,13 +8,13 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <div>
+  <div id="payment-container">
     <form id="sign-up">
-      <h1>Payment Form</h1>
-      <p>
+      <h1 class="title">Payment Form</h1>
+      <p class="required">
         Required fields are followed by <strong><span aria-label="required">*</span></strong>
       </p>
-      <section>
+      <section id="contact">
         <h2>Contact Information</h2>
         <p>
           <label for="username">Name: <span aria-label="required">*</span></label>
@@ -61,5 +61,10 @@
       </section>
     </form>
   </div>
+  <div id="thank-you-screen" class="hidden">
+    <h1>Thank you</h1>
+    <div id="customer-info"></div>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
