@@ -1,6 +1,8 @@
 export default function discoverPath(pyramid: number[][], target: number) {
 
   const pyramidLength = pyramid.length - 1;
+  const leftPath = "";
+  const rightPath = "";
 
   function pathTester(row: number, column: number, currentProduct: number, path: string, pyramidLength: number) {
 
@@ -19,11 +21,11 @@ export default function discoverPath(pyramid: number[][], target: number) {
     return null;
   }
 
-  const leftPath = pathTester(0, 0, pyramid[0][0], '', pyramidLength);
-  if (leftPath) return leftPath;
+  const left = pathTester(0, 0, pyramid[0][0], leftPath, pyramidLength);
+  if (left) return left;
 
-  const rightPath = pathTester(0, 1, pyramid[0][0], '', pyramidLength);
-  if (rightPath) return rightPath;
+  const right = pathTester(0, 1, pyramid[0][0], rightPath, pyramidLength);
+  if (right) return right;
 
   return null;
 

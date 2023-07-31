@@ -10,7 +10,7 @@ describe('Pyramid Descent Challenge', () => {
     ];
     const value = path(pyramid, 2);
 
-    expect(value).toEqual('LR');
+    expect(value).equal('LR');
 
   });
 
@@ -24,6 +24,6 @@ describe('Pyramid Descent Challenge', () => {
     ];
 
     const value = path(pyramid, 720);
-    expect(value).toEqual('LRLL');
+    expect(value).equal('LRLL');
   })
 });
